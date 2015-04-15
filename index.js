@@ -1,5 +1,5 @@
-var through = require('through')
-  , split   = require('split')
+var split   = require('split')
+  , through = require('through')
   , base64  = require('base64-stream');
 
 function header(name, fields) {
@@ -43,8 +43,14 @@ module.exports = {
     }, function () {
       this.queue(null);
     });
+    var first = true;
     var parsedHeaders = false;
     spl.on('data', function (ln) {
+      if (first && ln[0] !== '-') {
+        stream.emit('error', new Error("Invalid ascii armor message format"));
+        return stream.end();
+      }
+      first = false;
       if (/^-----/.test(ln)) return;
       if (ln && !parsedHeaders) {
         var parts = ln.split(': ')
