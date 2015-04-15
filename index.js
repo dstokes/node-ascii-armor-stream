@@ -10,26 +10,26 @@ function header(name, fields) {
     Object.keys(fields).map(function (k) {
       return k.charAt(0).toUpperCase() + k.slice(1) +": "+ fields[k]
     })
-  ].join("\n") + "\n\n";
+  ].join("\n");
 }
 
 function footer(name) {
-  return "\n-----END "+ name +"MESSAGE-----\n";
+  return "-----END "+ name +"MESSAGE-----";
 }
 
 module.exports = {
   encode: function (name, fields) {
     var idx = 0;
-    var encoder = base64.encode(64);
+    var encoder = base64.encode();
     name = (name ?  name.toUpperCase()+" " : "");
 
     var stream = through(function (d) {
       if (idx++ === 0)
-        this.queue(header(name, fields));
+        this.queue(header(name, fields) +"\n\n");
       encoder.write(d);
     }, function () {
       encoder.end();
-      this.queue(footer(name));
+      this.queue("\n"+ footer(name) +"\n");
       this.queue(null);
     });
     encoder.on('data', stream.queue);

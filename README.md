@@ -3,23 +3,35 @@ ascii-armor-stream
 
 Create ascii armor messages
 
+[![Build Status](https://travis-ci.org/dstokes/node-ascii-armor-stream.png)](https://travis-ci.org/dstokes/node-ascii-armor-stream)
+[![NPM](https://nodei.co/npm/ascii-armor-stream.png?downloads=true)](https://nodei.co/npm/ascii-armor-stream/) 
+
 example
 =======
 ```js
 var armor = require('ascii-armor-stream');
 
-var stream = armor.encode();
-stream.pipe(process.stdout);
-stream.write('ohai');
-stream.end();
+// encode
+var encoder = armor.encode('fancy', { food: taco });
+encoder.write('ohai');
+encoder.end();
 
 /**
  * -----BEGIN MESSAGE-----
- * Version: 1.0
+ * Version: ascii-armor-stream v1.0.0
+ * Food: taco
  *
  * b2hhaQo=
  * -----END MESSAGE-----
  */
+
+// decode
+var decoder = armor.decode();
+myEncodedStream.pipe(decoder);
+
+decoder.on('header', function(key, value) {
+  // handle headers
+});
 ```
 
 install
