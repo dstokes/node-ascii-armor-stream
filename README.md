@@ -17,12 +17,12 @@ encoder.write('ohai');
 encoder.end();
 
 /**
- * -----BEGIN MESSAGE-----
+ * -----BEGIN FANCY MESSAGE-----
  * Version: ascii-armor-stream v1.0.0
  * Food: taco
  *
  * b2hhaQo=
- * -----END MESSAGE-----
+ * -----END FANCY MESSAGE-----
  */
 
 // decode
