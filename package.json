@@ -1,0 +1,19 @@
+{
+  "name": "ascii-armor-stream",
+  "version": "1.0.0",
+  "description": "Create ascii armor messages from binary",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ascii"
+  ],
+  "author": "Drew Stokes <drew@drewstokes.com>",
+  "license": "MIT",
+  "dependencies": {
+    "base64-stream": "^0.1.2",
+    "split": "^0.3.3",
+    "through": "^2.3.7"
+  }
+}
