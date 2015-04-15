@@ -3,8 +3,8 @@ ascii-armor-stream
 
 Create ascii armor messages
 
-[![Build Status](https://travis-ci.org/dstokes/node-ascii-armor-stream.png)](https://travis-ci.org/dstokes/node-ascii-armor-stream)
-[![NPM](https://nodei.co/npm/ascii-armor-stream.png?downloads=true)](https://nodei.co/npm/ascii-armor-stream/) 
+[![Build Status](https://travis-ci.org/dstokes/node-ascii-armor-stream.png)](https://travis-ci.org/dstokes/node-ascii-armor-stream)  
+[![NPM](https://nodei.co/npm/ascii-armor-stream.png?downloads=true)](https://nodei.co/npm/ascii-armor-stream/)  
 
 example
 =======
