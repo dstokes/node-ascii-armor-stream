@@ -17,7 +17,10 @@
   "license": "MIT",
   "dependencies": {
     "base64-stream": "^0.1.2",
+    "duplexer": "^0.1.1",
+    "multipipe": "^0.1.2",
     "split": "^0.3.3",
+    "stream-combiner": "^0.2.1",
     "through": "^2.3.7"
   },
   "devDependencies": {
